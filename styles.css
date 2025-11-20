@@ -1,11 +1,113 @@
-/* Simple styling for the ECOSpace PurpleAir widget demo */
-:root{--max-width:900px;--accent:#6b45c6}
-*{box-sizing:border-box}
-body{font-family:Segoe UI, Roboto, Arial, sans-serif;line-height:1.4;margin:0;color:#222;background:#f7f7fb}
-header{background:linear-gradient(90deg,var(--accent),#1c7c22);color:#fff;padding:1.2rem}
-header h1{margin:0;font-size:1.4rem}
-main{max-width:var(--max-width);margin:2rem auto;padding:1rem;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,50,0.06)}
-#PurpleAirWidget_236695_module_US_EPA_AQI_conversion_C0_average_10_layer_US_EPA_AQI{width:100%;min-height:200px}
-.notes{margin-top:1rem;font-size:0.95rem;color:#444}
-footer{text-align:center;padding:1rem 0;color:#666;font-size:0.9rem}
-@media (max-width:600px){header h1{font-size:1.1rem};main{margin:1rem}}
+/*
+	Simple styling for the ECOSpace PurpleAir widget demo
+	Reformatted for readability with a few variables and explanatory comments.
+*/
+
+:root {
+  /* Layout sizes */
+  --max-width: 900px;
+
+  /* Theme colors */
+  --accent: #6b45c6; /* original accent (unused visually now) */
+  --header-bg: #1c7c22; /* solid green header chosen earlier */
+  --page-bg: #f7f7fb;
+  --text-color: #222;
+  --muted: #666;
+  --muted-2: #444;
+
+  /* Spacing */
+	--gutter: 0.5rem; /* Adjusted for tighter spacing */
+}
+
+/* Global box sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Page defaults */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--text-color);
+  background: var(--page-bg);
+}
+
+/* Header */
+header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 1.2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* Main container */
+main {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(20,20,50,0.06);
+}
+
+/* PurpleAir widget — keep full width inside its container and a minimum height */
+#PurpleAirWidget_236695_module_US_EPA_AQI_conversion_C0_average_10_layer_US_EPA_AQI,
+#PurpleAirWidget_233883_module_US_EPA_AQI_conversion_C0_average_10_layer_US_EPA_AQI {
+  width: 100%;
+  min-height: 200px;
+}
+
+/* Responsive two-widget layout */
+.widgets {
+  display: flex;
+  /* Tight gap so widgets sit close together — adjust this value as needed */
+	gap: 0.1rem; /* Adjusted for tighter spacing */
+  align-items: flex-start;
+  /* Pack items toward the start so they don't stretch across the container */
+  justify-content: flex-start;
+  flex-wrap: wrap; /* wrap to stack on small screens */
+  margin-bottom: 1rem;
+}
+
+.widgets .widget {
+  /* Aim for a ~50/50 split on wide screens while remaining responsive */
+	flex: 1 1 45%; /* Adjusted for tighter spacing */
+  min-width: 200px;
+}
+
+.widgets .widget > div {
+  /* inner widget should fill its column */
+  width: 100%;
+  min-height: 200px;
+}
+
+.notes {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--muted-2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Small screen adjustments */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.1rem;
+  }
+
+  main {
+    margin: 1rem;
+  }
+}
+ 
