@@ -1,0 +1,11 @@
+/* Simple styling for the ECOSpace PurpleAir widget demo */
+:root{--max-width:900px;--accent:#6b45c6}
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;line-height:1.4;margin:0;color:#222;background:#f7f7fb}
+header{background:linear-gradient(90deg,var(--accent),#1c7c22);color:#fff;padding:1.2rem}
+header h1{margin:0;font-size:1.4rem}
+main{max-width:var(--max-width);margin:2rem auto;padding:1rem;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,50,0.06)}
+#PurpleAirWidget_236695_module_US_EPA_AQI_conversion_C0_average_10_layer_US_EPA_AQI{width:100%;min-height:200px}
+.notes{margin-top:1rem;font-size:0.95rem;color:#444}
+footer{text-align:center;padding:1rem 0;color:#666;font-size:0.9rem}
+@media (max-width:600px){header h1{font-size:1.1rem};main{margin:1rem}}
