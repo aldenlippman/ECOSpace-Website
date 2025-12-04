@@ -27,7 +27,7 @@ while ($listener.IsListening) {
   $req = $context.Request
   $resp = $context.Response
   $localPath = $req.Url.LocalPath.TrimStart('/')
-  if ([string]::IsNullOrEmpty($localPath)) { $localPath = 'index.html' }
+  if ([string]::IsNullOrEmpty($localPath)) { $localPath = 'home.html' }
   $file = Join-Path $root $localPath
   if (Test-Path $file) {
     try {

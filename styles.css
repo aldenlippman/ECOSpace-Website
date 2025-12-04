@@ -86,6 +86,30 @@ main {
   min-height: 200px;
 }
 
+/* Layout for page navigation in header */
+.pages {
+  display: flex;
+  /* Tight gap so widgets sit close together — adjust this value as needed */
+	gap: 0.01px; /* Adjusted for tighter spacing */
+  align-items: flex-start;
+  /* Pack items toward the start so they don't stretch across the container */
+  justify-content: flex-start;
+  flex-wrap: wrap; /* wrap to stack on small screens */
+  margin-bottom: 1rem;
+}
+
+.pages .page {
+  /* Aim for a ~50/50 split on wide screens while remaining responsive */
+	flex: 1 1 25%; /* Adjusted for tighter spacing */
+  min-width: 20px;
+}
+
+.pages .page > div {
+  /* inner widget should fill its column */
+  width: 100%;
+  min-height: 200px;
+}
+
 .notes {
   margin-top: 1rem;
   font-size: 0.95rem;
